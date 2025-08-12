@@ -32,7 +32,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build shared.xcframework (Debug)
-        run: ./gradlew :shared:clean :shared:syncFramework
+        run: ./gradlew :shared:clean :shared:assembleDebugXCFramework
 
       - name: Upload XCFramework artifact
         uses: actions/upload-artifact@v4
