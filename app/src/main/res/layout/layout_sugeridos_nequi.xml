@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+    <!-- HorizontalScrollView para las imágenes de sugeridos -->
+    <HorizontalScrollView
+        android:id="@+id/hsvSugeridos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ivBackground"
+        android:layout_marginTop="@dimen/scroll_sugeridos_margin_bottom"
+        android:scrollbars="none"
+        android:overScrollMode="always"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+
+
+
+
+
+
+
+
+
+
+            <!-- Imagen tuplata.bin -->
+            <ImageView
+                android:id="@+id/ivTuplataSugeridos"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Imagen Tuplata Sugeridos"
+                android:src="@android:color/transparent" />
+
+            <!-- Imagen min.bin -->
+            <ImageView
+                android:id="@+id/ivMinSugeridos"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Imagen Min Sugeridos"
+                android:src="@android:color/transparent" />
+
+            <!-- Imagen salir.bin -->
+            <ImageView
+                android:id="@+id/ivSalirSugeridos"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Imagen Salir Sugeridos"
+                android:src="@android:color/transparent" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</RelativeLayout> 

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#200020">
+    
+
+         <!-- Flecha de regreso en la esquina superior izquierda -->
+    <ImageView
+        android:id="@+id/ivFlechaRegresoPerfil"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="Regresar"
+        android:focusable="true"
+        android:src="@drawable/ic_arrow_back_white_24" />
+
+     <!-- Texto "Tu perfil" al lado derecho de la flecha -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/moneda_bold"
+        android:text="Tu perfil"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp" />
+
+         <!-- Cuadrado rosado grande en el top center -->
+    <LinearLayout
+        android:id="@+id/llCuadradoRosado"
+        android:layout_width="360dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/rounded_button_pink"
+        android:gravity="center">
+
+    </LinearLayout>
+
+     <!-- Cuadrado blanco independiente con icono de cámara -->
+    <FrameLayout
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/rounded_button_white_border"
+        android:gravity="center">
+
+                                   <!-- Foto de perfil del usuario -->
+          <ImageView
+              android:id="@+id/ivFotoPerfil"
+              android:layout_width="95dp"
+              android:layout_height="95dp"
+              android:layout_gravity="center"
+              android:contentDescription="Foto de perfil"
+              android:scaleType="fitCenter"
+              android:visibility="gone" />
+
+         <!-- Icono de cámara negro sin relleno -->
+         <ImageView
+             android:id="@+id/ivCamaraPerfil"
+             android:layout_width="30dp"
+             android:layout_height="30dp"
+             android:layout_gravity="center"
+             android:contentDescription="Cámara"
+             android:src="@drawable/ic_camera_outline"
+             android:tint="#000000" />
+
+    </FrameLayout>
+
+    <!-- Contenedor para los 3 rectángulos debajo del cuadrado rosado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llCuadradoRosado"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+                 <!-- Primer rectángulo -->
+        <LinearLayout
+            android:id="@+id/llRectangulo1"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <!-- Icono de perilla/tuerca -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Ajustes"
+                android:src="@drawable/ic_settings_outline"
+                android:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/moneda_medium"
+                android:text="Ajustes"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+                 <!-- Segundo rectángulo -->
+        <LinearLayout
+            android:id="@+id/llRectangulo2"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <!-- Icono de copiar -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Documentos"
+                android:src="@drawable/ic_copy_outline"
+                android:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/moneda_medium"
+                android:text="Documentos y certificados"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+                 <!-- Tercer rectángulo -->
+        <LinearLayout
+            android:id="@+id/llRectangulo3"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <!-- Icono de ayuda (círculo con "?") -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Ayuda"
+                android:src="@drawable/ic_help_outline"
+                android:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/moneda_medium"
+                android:text="Ayuda"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+                 <!-- Cuarto rectángulo - Agregar Envío -->
+        <LinearLayout
+            android:id="@+id/llRectangulo4"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <!-- Icono de envío -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Agregar Envío"
+                android:src="@drawable/ic_arrow_back"
+                android:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/moneda_medium"
+                android:text="Agregar Envío"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+              </LinearLayout>
+
+     <!-- Campo editable "Tu nombre" debajo del cuadrado blanco -->
+    <EditText
+        android:id="@+id/etNombrePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="182dp"
+        android:background="@null"
+        android:fontFamily="@font/moneda_medium"
+        android:gravity="center"
+        android:hint="Tu nombre"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#CCCCCC"
+        android:textSize="19sp" />
+
+     <!-- Línea blanca delgada debajo del campo editable -->
+    <View
+        android:layout_width="325dp"
+        android:layout_height="1dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
+        android:background="#FFFFFF" />
+
+                       <!-- "# de tu Nequi" en la esquina inferior izquierda del cuadrado rosado -->
+    <TextView
+        android:id="@+id/tvDeTuNequi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llCuadradoRosado"
+        android:layout_alignStart="@id/llCuadradoRosado"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="-60dp"
+        android:fontFamily="@font/moneda_medium"
+        android:text="# de tu Nequi"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+     <!-- Número de teléfono debajo del "# de tu Nequi" -->
+    <TextView
+        android:id="@+id/tvNumeroTelefonoPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvDeTuNequi"
+        android:layout_alignStart="@id/llCuadradoRosado"
+        android:layout_marginStart="18sp"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/moneda_medium"
+        android:text="300 000 0000"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+     <!-- Símbolo de 4 cuadrados pequeños en la esquina inferior derecha del cuadrado rosado -->
+    <ImageView
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_below="@id/llCuadradoRosado"
+        android:layout_alignEnd="@id/llCuadradoRosado"
+        android:layout_marginTop="-37dp"
+        android:layout_marginEnd="14dp"
+        android:contentDescription="QR"
+        android:src="@drawable/ic_qr_code"
+        android:tint="#200020" />
+
+     <!-- Imagen salir.bin en la parte inferior -->
+     <ImageView
+         android:id="@+id/ivSalir"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginBottom="50dp"
+         android:contentDescription="Salir"
+         android:src="@android:color/transparent" />
+
+ </RelativeLayout> 

@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+
+    <!-- Fondo animado tenue -->
+    <ImageView
+        android:id="@+id/bgInfoAnim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0.18"
+        android:src="@drawable/hoy" />
+
+    <!-- Vignette overlay oscuro -->
+    <View
+        android:id="@+id/vignetteInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3200020" />
+
+    <!-- Contenedor principal del modal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/modal_rainbow_border"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header con título y botón cerrar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/font_de_the_boss"
+                android:gravity="center_vertical"
+                android:text="Información De La App:"
+                android:textColor="#1A001A"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- Botón cerrar -->
+            <ImageView
+                android:id="@+id/btnCloseModal"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_arrow_back_white_24"
+                android:tint="#880022"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="4dp"
+                android:contentDescription="Cerrar" />
+
+        </LinearLayout>
+
+        <!-- ScrollView para el contenido -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Sección: Creador -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/font_de_the_boss"
+                        android:text="Canal Ofisial "
+                        android:textColor="#4705E2"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTheBoss"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="El Jefe"
+                        android:textColor="#AA0033"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/font_de_the_boss"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="@drawable/rounded_button_white_border_thin"
+                        android:paddingLeft="14dp"
+                        android:paddingRight="14dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp" />
+
+                </LinearLayout>
+
+                <!-- Sección: Planes y Precios -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/font_de_the_boss"
+                        android:text="Pactos Disponibles"
+                        android:textColor="#4805E6"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Plan 1 Mes -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp"
+                        android:padding="12dp"
+                        android:background="@drawable/rounded_button_white_border">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="1 Millón"
+                            android:textColor="#1A001A"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="$ 30.000 COP"
+                            android:textColor="#EF4657"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <!-- Plan 5 Meses -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp"
+                        android:padding="12dp"
+                        android:background="@drawable/rounded_button_white_border">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="5 Millones "
+                            android:textColor="#1A001A"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="$ 35.000 COP"
+                            android:textColor="#E94354"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <!-- Plan 10 Meses -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp"
+                        android:padding="12dp"
+                        android:background="@drawable/rounded_button_white_border">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="10 Millones "
+                            android:textColor="#1A001A"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="$ 40.000 COP"
+                            android:textColor="#F04758"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <!-- Plan 12 Meses -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp"
+                        android:padding="12dp"
+                        android:background="@drawable/rounded_button_white_border">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="15 Millones "
+                            android:textColor="#1A001A"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="$ 50.000 COP"
+                            android:textColor="#EF4758"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Sección: Beneficios -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:fontFamily="@font/font_de_the_boss"
+                        android:text="BENEFICIOS:"
+                        android:textColor="#4806E2"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <!-- Beneficio 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="•"
+                            android:textColor="#AA0033"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="Simulacion 100% igual a la app original en transferencias. "
+                            android:textColor="#1A001A"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <!-- Beneficio 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="•"
+                            android:textColor="#AA0033"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Envíos a Bancolombia y Transfiya, atados al ritual"
+                            android:textColor="#1A001A"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/font_de_the_boss" />
+
+                    </LinearLayout>
+
+                    <!-- Beneficio 3 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="•"
+                            android:textColor="#AA0033"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Historial del pacto: todo queda escrito"
+                            android:textColor="#1A001A"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/font_de_the_boss" />
+
+                    </LinearLayout>
+
+                    <!-- Beneficio 4 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="•"
+                            android:textColor="#AA0033"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="Interfaz intuitiva: más fácil."
+                            android:textColor="#1A001A"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <!-- Beneficio 5 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="•"
+                            android:textColor="#AA0033"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="Soporte 24/7 ✅"
+                            android:textColor="#1A001A"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <!-- Beneficio 6 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="•"
+                            android:textColor="#AA0033"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="Oculta y cambia el saldo. "
+                            android:textColor="#1A001A"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <!-- Beneficio 7 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="•"
+                            android:textColor="#AA0033"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/font_de_the_boss"
+                            android:text="Comprobantes idénticos. La realidad no sospecha"
+                            android:textColor="#1A001A"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <!-- Beneficio 8 -->
+
+                </LinearLayout>
+
+                <!-- Sección: Recomendación -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:fontFamily="@font/font_de_the_boss"
+                        android:text="Recomendación"
+                        android:textColor="#4805E6"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_de_the_boss"
+                        android:lineSpacingExtra="2dp"
+                        android:text="La mejor experiencia, inicia la app en 410 DPI"
+                        android:textColor="#330011"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- Botón Aceptar -->
+        <TextView
+            android:id="@+id/btnAceptar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_button_pink"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/font_de_the_boss"
+            android:gravity="center"
+            android:shadowColor="#FFFFFFFF"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="8"
+            android:text="Aceptar el Juramento"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout> 

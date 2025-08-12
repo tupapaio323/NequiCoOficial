@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dimensiones para pantallas de baja densidad (DPI < 120) -->
+    
+    <!-- Posiciones fijas para elementos scrolleables -->
+    <dimen name="scroll_images_margin_bottom">350dp</dimen>
+    <dimen name="scroll_sugeridos_margin_bottom">500dp</dimen>
+    <dimen name="text_sugeridos_margin_bottom">480dp</dimen>
+    <dimen name="text_sugeridos_margin_start">24dp</dimen>
+    
+    <!-- Tamaños de imágenes -->
+    <dimen name="image_size_small">30dp</dimen>
+    <dimen name="image_size_medium">42dp</dimen>
+    <dimen name="image_size_large">62dp</dimen>
+    <dimen name="image_size_xlarge">92dp</dimen>
+    <dimen name="image_size_xxlarge">97dp</dimen>
+</resources> 

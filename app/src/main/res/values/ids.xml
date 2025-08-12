@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tvFloatingLabelCel" type="id"/>
+    <item name="tvFloatingLabelCuanto" type="id"/>
+    <item name="tvFloatingLabelCelTransfiya" type="id"/>
+    <item name="tvFloatingLabelCuantoTransfiya" type="id"/>
+    <item name="tvFloatingLabelCuentaBancolombia" type="id"/>
+    <item name="tvFloatingLabelCuantoBancolombia" type="id"/>
+    <item name="tvFloatingLabelPagoEn" type="id"/>
+    <item name="tvFloatingLabelCuantoPago" type="id"/>
+</resources> 

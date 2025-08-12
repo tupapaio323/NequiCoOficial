@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000">
+
+    <!-- Modal container -->
+    <RelativeLayout
+        android:id="@+id/modalContainer"
+        android:layout_width="400dp"
+        android:layout_height="600dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="370dp"
+        android:background="@drawable/modal_background"
+        android:visibility="invisible">
+
+        <!-- Título del modal -->
+        <TextView
+            android:id="@+id/tvModalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="31dp"
+            android:fontFamily="@font/moneda_regular"
+            android:text="Opciones para enviar"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <!-- Imagen del modal -->
+        <ImageView
+            android:id="@+id/ivModalImage"
+            android:layout_width="440dp"
+            android:layout_height="340dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="-50dp"
+            android:contentDescription="Opciones"
+            android:src="@android:color/transparent" />
+
+        <!-- Botón invisible para enviar -->
+        <Button
+            android:id="@+id/btnModalEnviar"
+            android:layout_width="390dp"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="87dp"
+            android:alpha="0"
+            android:background="@null"
+            android:contentDescription="Enviar"
+            android:text="Enviar"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Botón X para cerrar -->
+        <TextView
+            android:id="@+id/tvModalClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="19dp"
+            android:layout_marginTop="29dp"
+            android:clickable="true"
+            android:contentDescription="Cerrar modal"
+            android:focusable="true"
+            android:text="X"
+            android:textColor="#000000"
+            android:textSize="21sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout> 

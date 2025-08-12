@@ -1,0 +1,3132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#200020">
+
+    <!-- Fondo de inicio (FIJO) -->
+    <ImageView
+        android:id="@+id/ivBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:contentDescription="Fondo de inicio"
+        android:scaleType="centerCrop"
+        android:src="@android:color/transparent" />
+
+    <!-- Botón invisible para cambiar saldo (esquina superior derecha completa) -->
+    <Button
+        android:id="@+id/btnCambiarSaldo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0"
+        android:background="@android:color/transparent"
+        android:contentDescription="Cambiar saldo"
+        android:text=""
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- Imagen home.png en el centro de la parte inferior -->
+    <ImageView
+        android:id="@+id/ivHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:contentDescription="Imagen Home"
+        android:src="@android:color/transparent" />
+
+    <!-- Imagen movements.png invisible en el centro de la parte inferior -->
+    <ImageView
+        android:id="@+id/ivMovements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:contentDescription="Imagen Movements"
+        android:src="@android:color/transparent"
+        android:visibility="invisible" />
+
+    <!-- Imagen servicios.png invisible en el centro de la parte inferior -->
+    <ImageView
+        android:id="@+id/ivServicios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:contentDescription="Imagen Servicios"
+        android:src="@android:color/transparent"
+        android:visibility="invisible" />
+
+    <!-- Botones de navegación -->
+    <LinearLayout
+        android:id="@+id/llBotones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <!-- Botón 1 -->
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="@dimen/button_size_medium"
+            android:layout_height="@dimen/button_size_medium"
+            android:layout_marginStart="20dp"
+            android:alpha="0"
+            android:background="@drawable/button_background"
+            android:contentDescription="Botón 1"
+            android:text="1"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_medium" />
+
+        <!-- Botón 2 -->
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="@dimen/button_size_medium"
+            android:layout_height="@dimen/button_size_medium"
+            android:layout_marginStart="30dp"
+            android:alpha="0"
+            android:background="@drawable/button_background"
+            android:contentDescription="Botón 2"
+            android:text="2"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_medium" />
+
+        <!-- Botón 3 -->
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="@dimen/button_size_medium"
+            android:layout_height="@dimen/button_size_medium"
+            android:layout_marginStart="30dp"
+            android:alpha="0"
+            android:background="@drawable/button_background"
+            android:contentDescription="Botón 3"
+            android:text="3"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_medium" />
+
+        <!-- Botón 4 -->
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="@dimen/button_size_medium"
+            android:layout_height="@dimen/button_size_medium"
+            android:layout_marginStart="30dp"
+            android:alpha="0"
+            android:background="@drawable/button_background"
+            android:contentDescription="Botón 4"
+            android:text="4"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_medium" />
+
+    </LinearLayout>
+
+
+
+    <!-- HorizontalScrollView para las imágenes -->
+    <HorizontalScrollView
+        android:id="@+id/hsvImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ivBackground"
+        android:layout_marginTop="@dimen/scroll_images_margin_bottom"
+        android:scrollbars="none"
+        android:overScrollMode="always"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+            <!-- Imagen n.png -->
+            <ImageView
+                android:id="@+id/ivN"
+                android:layout_width="@dimen/image_size_xlarge"
+                android:layout_height="@dimen/image_size_xlarge"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Imagen N"
+                android:src="@android:color/transparent" />
+
+            <!-- Imagen llave.png -->
+            <ImageView
+                android:id="@+id/ivLlave"
+                android:layout_width="@dimen/image_size_xlarge"
+                android:layout_height="@dimen/image_size_xlarge"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Imagen Llave"
+                android:src="@android:color/transparent" />
+
+            <!-- Imagen wom.png -->
+            <ImageView
+                android:id="@+id/ivWom"
+                android:layout_width="@dimen/image_size_xlarge"
+                android:layout_height="@dimen/image_size_xlarge"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Imagen WOM"
+                android:src="@android:color/transparent" />
+
+
+
+            <!-- Imagen world.png -->
+            <ImageView
+                android:id="@+id/ivWorld"
+                android:layout_width="110dp"
+                android:layout_height="108dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="Imagen World"
+                android:src="@android:color/transparent" />
+
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+
+    <!-- HorizontalScrollView para las imágenes de sugeridos -->
+    <HorizontalScrollView
+        android:id="@+id/hsvSugeridos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ivBackground"
+        android:layout_marginTop="@dimen/scroll_sugeridos_margin_bottom"
+        android:scrollbars="none"
+        android:overScrollMode="always"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+
+    <ImageView
+        android:id="@+id/ivUser"
+        android:layout_width="@dimen/image_size_medium"
+        android:layout_height="@dimen/image_size_medium"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:contentDescription="Usuario"
+        android:padding="8dp"
+        android:src="@drawable/ic_user"
+        android:tint="#FFFFFF" />
+
+    <!-- Texto "Hola" al lado derecho del icono de usuario -->
+    <TextView
+        android:id="@+id/tvHola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ivUser"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="-1dp"
+        android:layout_toEndOf="@id/ivUser"
+        android:fontFamily="@font/moneda_regular"
+        android:text="Hola,"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_small" />
+
+    <!-- EditText para el nombre al lado derecho del icono de usuario -->
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvHola"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@id/ivUser"
+        android:background="@null"
+        android:fontFamily="@font/moneda_regular"
+        android:hint="Tu nombre"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#CCCCCC"
+        android:textSize="@dimen/text_size_medium"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="true"
+        android:longClickable="false" />
+
+    <!-- Icono de candado en esquina superior derecha -->
+    <ImageView
+        android:id="@+id/ivLock"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="-38dp"
+        android:contentDescription="Candado"
+        android:src="@android:color/transparent" />
+
+    <!-- Círculo de carga para pull-to-refresh -->
+    <ProgressBar
+        android:id="@+id/progressBarRefresh"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:visibility="invisible"
+        android:indeterminateTint="#FFFFFF" />
+
+    <!-- Texto "Deposito Bajo Monto" con icono de ojo cerrado en el centro arriba -->
+    <LinearLayout
+        android:id="@+id/llDepositoBajoMonto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="85dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/moneda_regular"
+            android:text="Depósito Bajo Monto"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_small" />
+
+        <ImageView
+            android:layout_width="@dimen/icon_size_small"
+            android:layout_height="@dimen/icon_size_small"
+            android:layout_marginTop="2dp"
+            android:contentDescription="Ojo cerrado"
+            android:src="@drawable/ic_eye_closed" />
+
+    </LinearLayout>
+
+    <!-- Layout horizontal para el monto principal -->
+    <LinearLayout
+        android:id="@+id/llMonto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llDepositoBajoMonto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-2dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Texto del monto principal -->
+        <TextView
+            android:id="@+id/tvMonto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        android:fontFamily="@font/moneda_bold"
+            android:text="$ 1.000.000"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_amount" />
+
+        <!-- Texto ",00" más pequeño -->
+    <TextView
+            android:id="@+id/tvMontoComa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/moneda_bold"
+            android:text=",00"
+            android:textColor="#FFFFFF"
+            android:textSize="19sp" />
+
+    </LinearLayout>
+
+    <!-- Layout horizontal para el total -->
+    <LinearLayout
+        android:id="@+id/llTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llMonto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Texto "Total" -->
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        android:fontFamily="@font/moneda_regular"
+            android:text="Total $ 1.000.000"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_total" />
+
+        <!-- Texto ",00" más pequeño -->
+        <TextView
+            android:id="@+id/tvTotalComa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/moneda_regular"
+            android:text=",00"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!-- Imagen tuplata.png abajo del texto Total -->
+    <ImageView
+        android:id="@+id/ivTuplata"
+        android:layout_width="@dimen/image_size_xxlarge"
+        android:layout_height="@dimen/image_size_xxlarge"
+        android:layout_below="@id/llTotal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-24dp"
+        android:contentDescription="Imagen Tuplata"
+        android:src="@android:color/transparent" />
+
+    <!-- Layout blanco transparente que aparece con transición -->
+    <View
+        android:id="@+id/layoutBlanco"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E6FFFFFF"
+        android:visibility="invisible" />
+
+    <!-- Layout blanco para movimientos (se abre al presionar botón 2) -->
+    <RelativeLayout
+        android:id="@+id/layoutMovimientos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="invisible">
+
+        <!-- Texto "Movimientos" en la esquina superior izquierda -->
+        <TextView
+            android:id="@+id/tvMovimientos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/moneda_bold"
+            android:text="Movimientos"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <!-- Imagen busca.png debajo del texto "Movimientos" -->
+        <ImageView
+            android:id="@+id/ivBuscaMovimientos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMovimientos"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="0dp"
+            android:contentDescription="Imagen Busca"
+            android:src="@android:color/transparent" />
+
+        <!-- Imagen min.png para cuando no hay envíos -->
+        <ImageView
+            android:id="@+id/ivMinMovimientos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="Imagen Min"
+            android:src="@android:color/transparent"
+            android:visibility="invisible" />
+
+        <!-- Contenedor para las imágenes envio.png con scroll vertical -->
+        <ScrollView
+            android:id="@+id/scrollEnviosMovimientos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/ivBuscaMovimientos"
+            android:layout_above="@id/llBotonesMovimientos"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:clipToPadding="false"
+            android:paddingTop="-20dp">
+
+            <!-- Contenedor único para todos los elementos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Layout con posicionamiento independiente usando RelativeLayout -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <!-- Imagen "Hoy" - Posicionamiento independiente -->
+                    <ImageView
+                        android:id="@+id/ivHoyMovimientos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="-60dp"
+                        android:src="@drawable/hoy"
+                        android:visibility="visible"
+                        android:scaleType="fitCenter" />
+
+                    <!-- Imagen "Mas movimientos" - Posicionamiento independiente -->
+                    <ImageView
+                        android:id="@+id/ivMasMovimientos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="-60dp"
+                        android:src="@drawable/mas_movimientos"
+                        android:visibility="invisible"
+                        android:scaleType="fitCenter" />
+
+                    <!-- Layout horizontal para los botones - Posicionamiento independiente -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <!-- Botón "Hoy" rosa con esquinas redondeadas -->
+                        <Button
+                            android:id="@+id/btnHoyMovimientos"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/rounded_button_pink"
+                            android:fontFamily="@font/moneda_medium"
+                            android:gravity="center"
+                            android:text="Hoy"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                        <!-- Botón "Mas movimientos" blanco con bordes negros -->
+                        <Button
+                            android:id="@+id/btnMasMovimientos"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/rounded_button_white_border"
+                            android:fontFamily="@font/moneda_medium"
+                            android:gravity="center"
+                            android:text="Mas movimientos"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!-- Texto "Hoy" debajo de los rectángulos -->
+                <TextView
+                    android:id="@+id/tvHoyTextoMovimientos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="-52dp"
+                    android:alpha="1.0"
+                    android:fontFamily="@font/moneda_medium"
+                    android:text="Hoy"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <FrameLayout
+                    android:id="@+id/llEnviosMovimientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp" />
+
+                <!-- Botón "Cargar más" en la parte inferior -->
+                <TextView
+                    android:id="@+id/btnCargarMas"
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="#FF0000"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/moneda_medium"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Cargar más"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    android:elevation="10dp" />
+
+                <!-- Indicador de carga -->
+                <ProgressBar
+                    android:id="@+id/progressBarCargarMas"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="50dp"
+                    android:indeterminateTint="#000000"
+                    android:visibility="gone"
+                    android:elevation="10dp" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- Botón "Cargar más" FUNCIONAL -->
+        <TextView
+            android:id="@+id/btnCargarMasFijo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/llBotonesMovimientos"
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/rounded_button_white_border"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/moneda_medium"
+            android:gravity="center"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Cargar más"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:elevation="20dp" />
+
+        <!-- Imagen home.png invisible en el centro de la parte inferior -->
+        <ImageView
+            android:id="@+id/ivHomeMovimientos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="0dp"
+            android:contentDescription="Imagen Home"
+            android:src="@android:color/transparent"
+            android:visibility="invisible" />
+
+        <!-- Imagen movements.png visible en el centro de la parte inferior -->
+        <ImageView
+            android:id="@+id/ivMovementsMovimientos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="0dp"
+            android:contentDescription="Imagen Movements"
+            android:src="@android:color/transparent" />
+
+        <!-- Imagen servicios.png invisible en el centro de la parte inferior -->
+        <ImageView
+            android:id="@+id/ivServiciosMovimientos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="0dp"
+            android:contentDescription="Imagen Servicios"
+            android:src="@android:color/transparent"
+            android:visibility="invisible" />
+
+        <!-- Imagen envia.png invisible en el layout de movimientos -->
+        <ImageView
+            android:id="@+id/ivEnviaMovimientos"
+            android:layout_width="555dp"
+            android:layout_height="555dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="-2dp"
+            android:layout_marginEnd="-168dp"
+            android:contentDescription="Imagen Envia"
+            android:src="@android:color/transparent"
+            android:visibility="invisible" />
+
+        <!-- Layout blanco para movimientos (se abre al presionar botón 4) -->
+        <View
+            android:id="@+id/layoutBlancoMovimientos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E6FFFFFF"
+            android:visibility="invisible" />
+
+        <!-- Botones de navegación para movimientos -->
+        <LinearLayout
+            android:id="@+id/llBotonesMovimientos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <!-- Botón 1 para movimientos -->
+            <Button
+                android:id="@+id/btn1Movimientos"
+                android:layout_width="@dimen/button_size_medium"
+                android:layout_height="@dimen/button_size_medium"
+                android:layout_marginStart="20dp"
+                android:alpha="0"
+                android:background="@drawable/button_background"
+                android:contentDescription="Botón 1"
+                android:text="1"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_medium" />
+
+            <!-- Botón 2 para movimientos -->
+            <Button
+                android:id="@+id/btn2Movimientos"
+                android:layout_width="@dimen/button_size_medium"
+                android:layout_height="@dimen/button_size_medium"
+                android:layout_marginStart="30dp"
+                android:alpha="0"
+                android:background="@drawable/button_background"
+                android:contentDescription="Botón 2"
+                android:text="2"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_medium" />
+
+            <!-- Botón 3 para movimientos -->
+            <Button
+                android:id="@+id/btn3Movimientos"
+                android:layout_width="@dimen/button_size_medium"
+                android:layout_height="@dimen/button_size_medium"
+                android:layout_marginStart="30dp"
+                android:alpha="0"
+                android:background="@drawable/button_background"
+                android:contentDescription="Botón 3"
+                android:text="3"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_medium" />
+
+            <!-- Botón 4 para movimientos -->
+            <Button
+                android:id="@+id/btn4Movimientos"
+                android:layout_width="@dimen/button_size_medium"
+                android:layout_height="@dimen/button_size_medium"
+                android:layout_marginStart="30dp"
+                android:alpha="0"
+                android:background="@drawable/button_background"
+                android:contentDescription="Botón 4"
+                android:text="4"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_medium" />
+
+        </LinearLayout>
+
+        <!-- Botón 5 para movimientos (independiente) -->
+        <Button
+            android:id="@+id/btn5Movimientos"
+            android:layout_width="@dimen/button_size_small"
+            android:layout_height="@dimen/button_size_small"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="230dp"
+            android:layout_marginEnd="15dp"
+            android:alpha="1"
+            android:background="@drawable/button_background"
+            android:contentDescription="Botón 5"
+            android:text="5"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="invisible" />
+
+        <!-- Botón 6 para movimientos -->
+        <Button
+            android:id="@+id/btn6Movimientos"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="120dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:alpha="0"
+            android:background="@drawable/button_background"
+            android:contentDescription="Botón 6"
+            android:text="6"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_medium" />
+
+        <!-- Botón 7 para movimientos -->
+        <Button
+            android:id="@+id/btn7Movimientos"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_above="@id/btn6Movimientos"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:alpha="0"
+            android:background="@drawable/button_background"
+            android:contentDescription="Botón 7"
+            android:text="7"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_medium" />
+
+        <!-- Botón 8 para movimientos -->
+        <Button
+            android:id="@+id/btn8Movimientos"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_above="@id/btn7Movimientos"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:alpha="0"
+            android:background="@drawable/button_background"
+            android:contentDescription="Botón 8"
+            android:text="8"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_medium" />
+
+    </RelativeLayout>
+
+    <!-- Layout blanco para Pago (similar a Enviar Plata) -->
+    <RelativeLayout
+        android:id="@+id/layoutPago"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/ivBackPago"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Atrás"
+            android:src="@drawable/ic_arrow_back_white_24"
+            android:tint="#000000" />
+
+        <TextView
+            android:id="@+id/tvPaga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivBackPago"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/moneda_bold"
+            android:text="Paga"
+            android:textColor="#000000"
+            android:textSize="21sp" />
+
+        <TextView
+            android:id="@+id/tvLabelPagoEn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvPaga"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="-9dp"
+            android:text="Paga en"
+            android:textColor="#9E9E9E"
+            android:textSize="12sp"
+            android:fontFamily="@font/moneda_regular" />
+
+        <EditText
+            android:id="@+id/etCelPago"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvLabelPagoEn"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_pago_disabled"
+            android:enabled="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:fontFamily="@font/moneda_regular"
+            android:gravity="bottom"
+            android:hint=""
+            android:paddingTop="25dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#666666"
+            android:textColorHint="#aaaaaa"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="13sp" />
+
+        <EditText
+            android:id="@+id/etCuantoPago"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etCelPago"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edit_text_pago_enabled"
+            android:fontFamily="@font/moneda_medium"
+            android:gravity="bottom"
+            android:hint="¿Cuanto?"
+            android:inputType="number"
+            android:paddingTop="25dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvOrigenPlataPago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etCuantoPago"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/moneda_medium"
+            android:text="Escoge de donde saldra la plata"
+            android:textColor="#d90080"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/ivDisponiblePago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvOrigenPlataPago"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="Disponible"
+            android:src="@android:color/transparent" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="40dp">
+
+            <TextView
+                android:id="@+id/btnPaga"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:alpha="0.5"
+                android:background="@drawable/button_background_final"
+                android:clickable="false"
+                android:focusable="false"
+                android:fontFamily="@font/moneda_regular"
+                android:gravity="center"
+                android:text="Paga"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:shadowColor="#FFFFFFFF"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="0"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+
+    <!-- Imagen envia.png invisible (al final absoluto para que aparezca por encima de todo) -->
+    <ImageView
+        android:id="@+id/ivEnvia"
+        android:layout_width="555dp"
+        android:layout_height="555dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="-2dp"
+        android:layout_marginEnd="-168dp"
+        android:contentDescription="Imagen Envia"
+        android:src="@android:color/transparent"
+        android:visibility="invisible" />
+
+    <!-- Botón 5 (independiente) - al final para que aparezca por encima de todo -->
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="@dimen/button_size_small"
+        android:layout_height="@dimen/button_size_small"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="230dp"
+        android:layout_marginEnd="15dp"
+        android:alpha="1"
+        android:background="@drawable/button_background"
+        android:contentDescription="Botón 5"
+        android:text="5"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_medium"
+        android:visibility="invisible" />
+
+    <!-- Botón 6 (debajo del botón 5) -->
+    <Button
+        android:id="@+id/btn6Abajo"
+        android:layout_width="@dimen/button_size_small"
+        android:layout_height="@dimen/button_size_small"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="160dp"
+        android:layout_marginEnd="15dp"
+        android:elevation="15dp"
+        android:alpha="0"
+        android:background="@drawable/button_background"
+        android:contentDescription="Botón 6"
+        android:text="6"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_medium"
+        android:visibility="invisible" />
+
+
+
+
+    <!-- Layout para guardar contactos (se abre al presionar el candado) -->
+    <RelativeLayout
+        android:id="@+id/layoutContactos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#200020"
+        android:visibility="invisible">
+
+        <!-- Layout vacío para el candado -->
+
+    </RelativeLayout>
+
+    <!-- Layout de servicios (se abre al presionar servi.png) -->
+    <RelativeLayout
+        android:id="@+id/layoutServicios"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#200020"
+        android:visibility="invisible">
+
+        <!-- Flecha de regreso en esquina superior izquierda -->
+        <ImageView
+            android:id="@+id/ivFlechaRegresoServicios"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Flecha de regreso"
+            android:src="@drawable/ic_arrow_back_white_24"
+            android:tint="#FFFFFF" />
+
+        <!-- Título "Nombre de la victima" -->
+        <TextView
+            android:id="@+id/tvTituloServicios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivFlechaRegresoServicios"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/moneda_bold"
+            android:text="Nombre de la victima"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp" />
+
+        <!-- Icono de borrar contactos (OCULTO - Ya no se usa) -->
+        <ImageView
+            android:id="@+id/ivBorrarContactos"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:contentDescription="Borrar todos los contactos"
+            android:focusable="true"
+            android:src="@android:color/transparent"
+            android:tint="#FFFFFF"
+            android:visibility="gone" />
+
+        <!-- Campo "Nombre" -->
+        <EditText
+            android:id="@+id/etNombreContacto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTituloServicios"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/edit_text_contactos_rounded"
+            android:fontFamily="@font/moneda_regular"
+            android:hint="Nombre completo"
+            android:inputType="textPersonName"
+            android:padding="20dp"
+            android:textColor="#000000"
+            android:textColorHint="#666666"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="16sp" />
+
+        <!-- Campo "Número" -->
+        <EditText
+            android:id="@+id/etNumeroContacto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etNombreContacto"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edit_text_contactos_rounded"
+            android:fontFamily="@font/moneda_regular"
+            android:hint="Numero de cel o Numero de cuenta"
+            android:inputType="number"
+            android:maxLength="13"
+            android:padding="20dp"
+            android:textColor="#000000"
+            android:textColorHint="#666666"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="16sp" />
+
+        <!-- Botón "Guardar" -->
+        <TextView
+            android:id="@+id/btnGuardarContacto"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/etNumeroContacto"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/button_background_final"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/moneda_regular"
+            android:gravity="center"
+            android:text="Guardar"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <!-- ScrollView para la lista de contactos -->
+        <ScrollView
+            android:id="@+id/scrollViewContactos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/btnGuardarContacto"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:id="@+id/llListaContactos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp">
+
+                <!-- Los contactos se agregarán dinámicamente aquí -->
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <!-- Layout blanco para enviar plata (se abre al presionar botón 6) - encima del modal -->
+    <RelativeLayout
+        android:id="@+id/layoutEnviarPlata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="invisible">
+
+        <!-- Imagen novalidado.png (invisible por defecto) -->
+        <ImageView
+            android:id="@+id/ivNovalidado"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="Imagen Novalidado"
+            android:src="@android:color/transparent"
+            android:visibility="invisible" />
+
+        <!-- Botón invisible sobre novalidado.png -->
+        <Button
+            android:id="@+id/btnListoNovalidado"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="Botón Listo Novalidado"
+            android:text=""
+            android:visibility="visible" />
+
+        <!-- Flecha de regreso en esquina superior izquierda -->
+        <ImageView
+            android:id="@+id/ivFlechaRegresoEnviar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Flecha de regreso"
+            android:src="@drawable/ic_arrow_back_white_24"
+            android:tint="#000000" />
+
+        <!-- Título "Envia plata" -->
+        <TextView
+            android:id="@+id/tvEnviarPlata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivFlechaRegresoEnviar"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/moneda_bold"
+            android:text="Envia plata"
+            android:textColor="#000000"
+            android:textSize="21sp" />
+
+        <!-- Campo "Cel" con hint manual -->
+        <EditText
+            android:id="@+id/etCel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvEnviarPlata"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_rounded_floating"
+            android:fontFamily="@font/moneda_medium"
+            android:gravity="bottom"
+            android:hint="Cel"
+            android:inputType="phone"
+            android:paddingTop="25dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="14sp"
+            android:alpha="1.0" />
+
+        <!-- Texto de advertencia debajo del campo Cel -->
+        <TextView
+            android:id="@+id/tvAdvertenciaCel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etCel"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/moneda_regular"
+            android:text="Revisa bien el numero para enviarle a la persona correcta"
+            android:textColor="#666666"
+            android:textSize="12sp" />
+
+        <!-- Campo "¿Cuanto?" -->
+        <EditText
+            android:id="@+id/etCuanto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAdvertenciaCel"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edit_text_rounded_floating"
+            android:fontFamily="@font/moneda_medium"
+            android:gravity="bottom"
+            android:hint="¿Cuanto?"
+            android:inputType="number"
+            android:paddingTop="25dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="14sp"
+            android:alpha="1.0" />
+
+        <!-- Campo "Mensaje" (más alto) -->
+        <EditText
+            android:id="@+id/etMensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etCuanto"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edit_text_rounded"
+            android:fontFamily="@font/moneda_medium"
+            android:gravity="top"
+            android:hint="Mensaje"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:padding="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="14sp"
+            android:alpha="1.0" />
+
+        <!-- Texto "Escoge de donde saldra la plata" -->
+        <TextView
+            android:id="@+id/tvOrigenPlata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etMensaje"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/moneda_medium"
+            android:text="Escoge de donde saldra la plata"
+            android:textColor="#d90080"
+            android:textSize="15sp" />
+
+        <!-- Imagen disponible.png -->
+        <ImageView
+            android:id="@+id/ivDisponible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvOrigenPlata"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="Disponible"
+            android:src="@android:color/transparent" />
+
+
+
+        <!-- Botón "Sigue" igual al de LoginActivity -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="40dp">
+
+            <TextView
+                android:id="@+id/btnEntraEnviarPlata"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:alpha="0.5"
+                android:background="@drawable/button_background_final"
+                android:clickable="false"
+                android:focusable="false"
+                android:fontFamily="@font/moneda_regular"
+                android:gravity="center"
+                android:text="Sigue"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:shadowColor="#FFFFFFFF"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="8" />
+
+            <ProgressBar
+                android:id="@+id/progressBarSigue"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:visibility="gone"
+                android:indeterminateTint="#FFFFFF" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <!-- Modal overlay (al final para que aparezca por encima de todo) -->
+    <RelativeLayout
+        android:id="@+id/modalOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:visibility="invisible">
+
+        <!-- Modal container con ScrollView (para botón 5) -->
+        <ScrollView
+            android:id="@+id/modalScrollView"
+            android:layout_width="400dp"
+            android:layout_height="600dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-150dp"
+            android:background="@drawable/modal_background"
+            android:visibility="invisible"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <!-- Título del modal -->
+                <TextView
+                    android:id="@+id/tvModalTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="11dp"
+                    android:fontFamily="@font/moneda_bold"
+                    android:text="Opciones para enviar"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_size_title" />
+
+
+
+
+
+                <!-- Imagen del modal -->
+                <ImageView
+                    android:id="@+id/ivModalImage"
+                    android:layout_width="480dp"
+                    android:layout_height="480dp"
+                    android:layout_below="@id/tvModalTitle"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-30dp"
+                    android:contentDescription="Opciones"
+                    android:src="@android:color/transparent" />
+
+                <!-- Botón 6 del ancho del modal (superpuesto sobre la imagen) -->
+                <Button
+                    android:id="@+id/btn6"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_alignTop="@id/ivModalImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/button_background"
+                    android:contentDescription="Botón 6"
+                    android:text="6"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <!-- Botón 7 del ancho del modal (debajo del botón 6) -->
+                <Button
+                    android:id="@+id/btn7"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_below="@id/btn6"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/button_background"
+                    android:contentDescription="Botón 7"
+                    android:text="7"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <!-- Botón 8 del ancho del modal (debajo del botón 7) -->
+                <Button
+                    android:id="@+id/btn8"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_below="@id/btn7"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/button_background"
+                    android:contentDescription="Botón 8"
+                    android:text="8"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <!-- Botón invisible para enviar -->
+                <Button
+                    android:id="@+id/btnModalEnviar"
+                    android:layout_width="360dp"
+                    android:layout_height="52dp"
+                    android:layout_below="@id/ivModalImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:alpha="0"
+                    android:background="@null"
+                    android:contentDescription="Enviar"
+                    android:text="Enviar"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text_size_xlarge"
+                    android:textStyle="bold" />
+
+
+
+                <!-- Contenido adicional para hacer el modal más largo -->
+                <TextView
+                    android:id="@+id/tvInfoAdicional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnModalEnviar"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/moneda_regular"
+                    android:text="Información adicional del modal"
+                    android:textColor="#666666"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvLoremIpsum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnModalEnviar"
+                    android:layout_marginTop="60dp"
+                    android:fontFamily="@font/moneda_regular"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvMasContenido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnModalEnviar"
+                    android:layout_marginTop="120dp"
+                    android:fontFamily="@font/moneda_regular"
+                    android:text="Más contenido para hacer el modal scrolleable..."
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvFinalContenido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnModalEnviar"
+                    android:layout_marginTop="180dp"
+                    android:fontFamily="@font/moneda_regular"
+                    android:text="Final del contenido del modal"
+                    android:textColor="#666666"
+                    android:textSize="14sp" />
+
+                <!-- Botón X para cerrar -->
+                <TextView
+                    android:id="@+id/tvModalClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginTop="9dp"
+                    android:clickable="true"
+                    android:contentDescription="Cerrar modal"
+                    android:focusable="true"
+                    android:text="X"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_size_xxlarge" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <!-- Modal sencillo para Código QR (Btn6Abajo) -->
+        <ScrollView
+            android:id="@+id/modalScrollViewQR"
+            android:layout_width="400dp"
+            android:layout_height="600dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-260dp"
+            android:background="@drawable/modal_background"
+            android:visibility="invisible"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/tvModalTitleQR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="11dp"
+                    android:fontFamily="@font/moneda_bold"
+                    android:text="Codigo QR"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_size_title" />
+
+                <ImageView
+                    android:id="@+id/ivModalImageQR"
+                    android:layout_width="400dp"
+                    android:layout_height="400dp"
+                    android:layout_below="@id/tvModalTitleQR"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-30dp"
+                    android:contentDescription="Codigo QR"
+                    android:src="@android:color/transparent" />
+
+                <Button
+                    android:id="@+id/btnAbrirLectorQR"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/ivModalImageQR"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-330dp"
+                    android:alpha="0"
+                    android:background="@drawable/button_background"
+                    android:text="Lector de QR"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvModalCloseQR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="9dp"
+                    android:clickable="true"
+                    android:contentDescription="Cerrar modal QR"
+                    android:focusable="true"
+                    android:text="X"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_size_xxlarge" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <!-- Overlay del lector de QR -->
+        <RelativeLayout
+            android:id="@+id/layoutLectorQR"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:elevation="100dp"
+            android:translationZ="100dp"
+            android:visibility="gone">
+
+            <androidx.camera.view.PreviewView
+                android:id="@+id/previewViewQr"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:keepScreenOn="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true" />
+
+            <!-- Overlay (máscara con ventana centrada de 260dp) -->
+            <com.wts.nequicooficial.ui.ScannerOverlayView
+                android:id="@+id/scannerOverlayView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!-- Barra superior simple con atrás y flash -->
+            <LinearLayout
+                android:id="@+id/barraSuperiorQR"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:gravity="center_vertical"
+                android:background="#80000000">
+
+                <TextView
+                    android:id="@+id/ivBackQr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atrás"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:padding="8dp" />
+
+                <TextView
+                    android:id="@+id/tvTitleQr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Escanea un código QR"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/btnTorchQr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flash"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Modal de confirmación (para botón Sigue) -->
+        <ScrollView
+            android:id="@+id/modalScrollViewConfirmacion"
+            android:layout_width="400dp"
+            android:layout_height="600dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-60dp"
+            android:background="@drawable/modal_background"
+            android:visibility="invisible"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <!-- Título del modal de confirmación -->
+                <TextView
+                    android:id="@+id/tvModalTitleConfirmacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="27dp"
+                    android:fontFamily="@font/moneda_bold"
+                    android:text="Confirma el numero"
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:visibility="visible" />
+
+                <!-- Texto "Vas a enviar a:" -->
+                <TextView
+                    android:id="@+id/tvVasAEnviarA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvModalTitleConfirmacion"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="17dp"
+                    android:fontFamily="@font/moneda_medium"
+                    android:text="Vas a enviar a:"
+                    android:textColor="#d90080"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <!-- Nombre del contacto -->
+                <TextView
+                    android:id="@+id/tvNombreContactoConfirmacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvVasAEnviarA"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/moneda_medium"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <!-- Texto "Al numero de celular:" -->
+                <TextView
+                    android:id="@+id/tvAlNumeroCelular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNombreContactoConfirmacion"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/moneda_medium"
+                    android:text="Al numero de celular:"
+                    android:textColor="#d90080"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <!-- Número de celular -->
+                <TextView
+                    android:id="@+id/tvNumeroCelularConfirmacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvAlNumeroCelular"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/moneda_medium"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <!-- Texto "¿Cuanto?" -->
+                <TextView
+                    android:id="@+id/tvCuantoConfirmacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNumeroCelularConfirmacion"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/moneda_medium"
+                    android:text="¿Cuanto?"
+                    android:textColor="#d90080"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <!-- Cantidad formateada -->
+                <TextView
+                    android:id="@+id/tvCantidadConfirmacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvCuantoConfirmacion"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/moneda_medium"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <!-- Texto "La plata saldra de:" -->
+                <TextView
+                    android:id="@+id/tvLaPlataSaldraDe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvCantidadConfirmacion"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/moneda_medium"
+                    android:text="La plata saldra de:"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <!-- Imagen disponible2.png -->
+                <ImageView
+                    android:id="@+id/ivDisponible2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvLaPlataSaldraDe"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="-14dp"
+                    android:layout_marginTop="5dp"
+                    android:contentDescription="Disponible 2"
+                    android:src="@android:color/transparent" />
+
+                <!-- Botón Confirma -->
+                <TextView
+                    android:id="@+id/btnConfirma"
+                    android:layout_width="360dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/tvLaPlataSaldraDe"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="80dp"
+                    android:background="@drawable/button_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Confirma"
+                    android:text="Confirma"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text_size_medium"
+                    android:gravity="center"
+                    android:fontFamily="@font/moneda_regular"
+                    android:visibility="visible" />
+
+                <!-- Botón Corrige algo -->
+                <TextView
+                    android:id="@+id/btnCorrigeAlgo"
+                    android:layout_width="360dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/btnConfirma"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/button_corrige_algo"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="Corrige algo"
+                    android:text="Corrige algo"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_size_medium"
+                    android:gravity="center"
+                    android:fontFamily="@font/moneda_regular"
+                    android:visibility="visible" />
+
+                <!-- Botón X para cerrar -->
+                <TextView
+                    android:id="@+id/tvModalCloseConfirmacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginTop="9dp"
+                    android:clickable="true"
+                    android:contentDescription="Cerrar modal"
+                    android:focusable="true"
+                    android:text="X"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/text_size_xxlarge" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <!-- Layout para botón 7 (similar al de enviar plata) -->
+    <RelativeLayout
+        android:id="@+id/layoutBotón7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="invisible">
+
+        <!-- Flecha de regreso en esquina superior izquierda -->
+        <ImageView
+            android:id="@+id/ivFlechaRegresoBotón7"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Flecha de regreso"
+            android:src="@drawable/ic_arrow_back_white_24"
+            android:tint="#000000" />
+
+
+
+        <!-- Estrella en esquina superior derecha -->
+        <ImageView
+            android:id="@+id/ivEstrellaBotón7"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="-28dp"
+            android:contentDescription="Estrella"
+            android:src="@android:color/transparent" />
+
+        <!-- Título "Envia a Bancolombia" -->
+        <TextView
+            android:id="@+id/tvTítuloBotón7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivFlechaRegresoBotón7"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/moneda_bold"
+            android:text="Envia a Bancolombia"
+            android:textColor="#000000"
+            android:textSize="21sp" />
+
+        <!-- Imagen costo.png debajo del título -->
+        <ImageView
+            android:id="@+id/ivCostoBotón7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTítuloBotón7"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="0dp"
+            android:contentDescription="Costo"
+            android:src="@android:color/transparent" />
+
+        <!-- Campo "Tipo de cuenta" -->
+        <TextView
+            android:id="@+id/etCampo1Botón7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivCostoBotón7"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_rounded_floating"
+            android:fontFamily="@font/moneda_regular"
+            android:gravity="center_vertical"
+            android:hint="Tipo de cuenta"
+            android:padding="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:drawableEnd="@drawable/ic_arrow_down_thin"
+            android:drawablePadding="8dp" />
+
+        <!-- Campo "Numero de cuenta" -->
+        <EditText
+            android:id="@+id/etCampo2Botón7"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/etCampo1Botón7"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edit_text_rounded"
+            android:fontFamily="@font/moneda_regular"
+            android:gravity="center_vertical"
+            android:hint="Numero de cuenta"
+            android:inputType="phone"
+            android:padding="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="14sp" />
+
+        <!-- Campo "¿Cuanto?" -->
+        <EditText
+            android:id="@+id/etCampo3Botón7"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/etCampo2Botón7"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edit_text_rounded"
+            android:fontFamily="@font/moneda_regular"
+            android:gravity="center_vertical"
+            android:hint="¿Cuanto?"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="14sp" />
+
+        <!-- Imagen recordar.png -->
+        <ImageView
+            android:id="@+id/ivRecordarBotón7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etCampo3Botón7"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="Recordar"
+            android:src="@android:color/transparent" />
+
+        <!-- Texto "Escoge de donde saldra la plata" -->
+        <TextView
+            android:id="@+id/tvEscogePlataBotón7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivRecordarBotón7"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/moneda_medium"
+            android:text="Escoge de donde saldra la plata"
+            android:textColor="#d90080"
+            android:textSize="17sp" />
+
+        <!-- Imagen disponible.png -->
+        <ImageView
+            android:id="@+id/ivDisponibleBotón7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvEscogePlataBotón7"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="Disponible"
+            android:src="@android:color/transparent" />
+
+        <!-- Botón "Continuar" -->
+        <TextView
+            android:id="@+id/btnConfirmarBotón7"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Continuar"
+            android:text="Continuar"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_medium"
+            android:gravity="center"
+            android:fontFamily="@font/moneda_regular"
+            android:alpha="0.5" />
+
+        <!-- Modal para selector de tipo de cuenta -->
+        <RelativeLayout
+            android:id="@+id/modalTipoCuenta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:visibility="invisible">
+
+            <!-- Contenedor del modal -->
+            <RelativeLayout
+                android:id="@+id/contenedorModalTipoCuenta"
+                android:layout_width="500dp"
+                android:layout_height="250dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="-20dp"
+                android:background="@drawable/modal_rounded_background"
+                android:padding="25dp">
+
+                <!-- Título del modal -->
+                <TextView
+                    android:id="@+id/tvTítuloModalTipoCuenta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/moneda_bold"
+                    android:text="Tipo de Cuenta"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <!-- Opción Corriente -->
+                <TextView
+                    android:id="@+id/tvCorriente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvTítuloModalTipoCuenta"
+                    android:layout_marginTop="24dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/moneda_regular"
+                    android:padding="16dp"
+                    android:text="Corriente"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <!-- Opción Ahorros -->
+                <TextView
+                    android:id="@+id/tvAhorros"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvCorriente"
+                    android:layout_marginTop="8dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/moneda_regular"
+                    android:padding="16dp"
+                    android:text="Ahorros"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Layout para "Envia plata transfiya" (se abre desde el modal del botón 8) -->
+    <RelativeLayout
+        android:id="@+id/layoutTransfiya"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="invisible">
+
+        <!-- Flecha de regreso en esquina superior izquierda -->
+        <ImageView
+            android:id="@+id/ivFlechaRegresoTransfiya"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Flecha de regreso"
+            android:src="@drawable/ic_arrow_back_white_24"
+            android:tint="#000000" />
+
+        <!-- Título "Envia plata transfiya" -->
+        <TextView
+            android:id="@+id/tvTransfiya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivFlechaRegresoTransfiya"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/moneda_bold"
+            android:text="Envia plata transfiya"
+            android:textColor="#000000"
+            android:textSize="21sp" />
+
+        <!-- Campo "Cel" -->
+        <EditText
+            android:id="@+id/etCelTransfiya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTransfiya"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_rounded_floating"
+            android:fontFamily="@font/moneda_regular"
+            android:gravity="bottom"
+            android:hint="Cel"
+            android:inputType="phone"
+            android:padding="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="14sp" />
+
+        <!-- Campo "¿Cuanto?" -->
+        <EditText
+            android:id="@+id/etCuantoTransfiya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etCelTransfiya"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edit_text_rounded"
+            android:fontFamily="@font/moneda_regular"
+            android:gravity="bottom"
+            android:hint="¿Cuanto?"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="14sp" />
+
+        <!-- Campo "Mensaje" (Deshabilitado) -->
+        <EditText
+            android:id="@+id/etMensajeTransfiya"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etCuantoTransfiya"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edit_text_rounded"
+            android:fontFamily="@font/moneda_regular"
+            android:gravity="top"
+            android:hint="Mensaje"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:padding="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textCursorDrawable="@drawable/white_cursor"
+            android:textSize="14sp"
+            android:enabled="true"
+            android:focusable="false"
+            android:clickable="false" />
+
+        <!-- Texto "Escoge de donde saldra la plata" -->
+        <TextView
+            android:id="@+id/tvOrigenPlataTransfiya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etMensajeTransfiya"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/moneda_medium"
+            android:text="Escoge de donde saldra la plata"
+            android:textColor="#d90080"
+            android:textSize="15sp" />
+
+        <!-- Imagen disponible.png -->
+        <ImageView
+            android:id="@+id/ivDisponibleTransfiya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvOrigenPlataTransfiya"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="0dp"
+            android:contentDescription="Disponible"
+            android:src="@android:color/transparent" />
+
+        <!-- Imagen escrito.png -->
+        <ImageView
+            android:id="@+id/ivEscritoTransfiya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivDisponibleTransfiya"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="Escrito"
+            android:src="@android:color/transparent" />
+
+        <!-- Botón "Sigue" igual al de LoginActivity -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="40dp">
+
+            <TextView
+                android:id="@+id/btnSigueTransfiya"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:alpha="0.5"
+                android:background="@drawable/button_background_final"
+                android:clickable="false"
+                android:focusable="false"
+                android:fontFamily="@font/moneda_regular"
+                android:gravity="center"
+                android:text="Sigue"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:shadowColor="#FFFFFFFF"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="8" />
+
+            <ProgressBar
+                android:id="@+id/progressBarSigueTransfiya"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:visibility="gone"
+                android:indeterminateTint="#FFFFFF" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <!-- Modal para el botón 8 (independiente) -->
+    <RelativeLayout
+        android:id="@+id/modalBotón8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:visibility="invisible">
+
+        <!-- Contenedor del modal -->
+        <RelativeLayout
+            android:id="@+id/contenedorModalBotón8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="500dp"
+            android:background="@drawable/modal_rounded_background"
+            android:padding="24dp">
+
+            <!-- Flecha de regreso -->
+            <ImageView
+                android:id="@+id/ivFlechaRegresoModal8"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Flecha de regreso"
+                android:src="@drawable/ic_arrow_back_white_24"
+                android:tint="#000000" />
+
+            <!-- Imagen tran.png -->
+            <ImageView
+                android:id="@+id/ivTranModal8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/btnListoModal8"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="Tran"
+                android:src="@android:color/transparent" />
+
+            <!-- Botón "Listo" -->
+            <TextView
+                android:id="@+id/btnListoModal8"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/button_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Listo"
+                android:text="Listo"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_medium"
+                android:gravity="center"
+                android:fontFamily="@font/moneda_regular" />
+
+            <!-- Texto "¿Más info?" -->
+            <TextView
+                android:id="@+id/tvMasInfoModal8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/btnListoModal8"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="-80dp"
+                android:fontFamily="@font/moneda_regular"
+                android:text="¿Más info?"
+                android:textColor="#d90080"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:drawableBottom="@drawable/underline_simple"
+                android:drawablePadding="2dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Modal para el botón 8 (independiente) -->
+    <RelativeLayout
+        android:id="@+id/modalBotón8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:visibility="invisible">
+
+        <!-- Contenedor del modal -->
+        <RelativeLayout
+            android:id="@+id/contenedorModalBotón8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="500dp"
+            android:background="@drawable/modal_rounded_background"
+            android:padding="24dp">
+
+            <!-- Flecha de regreso -->
+            <ImageView
+                android:id="@+id/ivFlechaRegresoModal8"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Flecha de regreso"
+                android:src="@drawable/ic_arrow_back_white_24"
+                android:tint="#000000" />
+
+            <!-- Imagen tran.png -->
+            <ImageView
+                android:id="@+id/ivTranModal8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/btnListoModal8"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="Tran"
+                android:src="@android:color/transparent" />
+
+            <!-- Botón "Listo" -->
+            <TextView
+                android:id="@+id/btnListoModal8"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/button_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Listo"
+                android:text="Listo"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_medium"
+                android:gravity="center"
+                android:fontFamily="@font/moneda_regular" />
+
+            <!-- Texto "¿Más info?" -->
+            <TextView
+                android:id="@+id/tvMasInfoModal8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/btnListoModal8"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="-80dp"
+                android:fontFamily="@font/moneda_regular"
+                android:text="¿Más info?"
+                android:textColor="#d90080"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:drawableBottom="@drawable/underline_simple"
+                android:drawablePadding="2dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Fondo oscuro para el modal de Transfiya -->
+    <View
+        android:id="@+id/modalBackgroundOverlayTransfiya"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="invisible"
+        android:elevation="500dp" />
+
+    <!-- Modal de confirmación para Transfiya (máxima prioridad) -->
+    <ScrollView
+        android:id="@+id/modalScrollViewConfirmacionTransfiya"
+        android:layout_width="400dp"
+        android:layout_height="600dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-120dp"
+        android:background="@drawable/modal_background_rounded"
+        android:visibility="invisible"
+        android:scrollbars="none"
+        android:elevation="1000dp"
+        android:clipToOutline="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:background="#FFFFFF">
+
+            <!-- Título del modal de confirmación -->
+            <TextView
+                android:id="@+id/tvModalTitleConfirmacionTransfiya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="27dp"
+                android:fontFamily="@font/moneda_bold"
+                android:text="Confirma el numero"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:visibility="visible" />
+
+            <!-- Texto "Al numero de celular:" -->
+            <TextView
+                android:id="@+id/tvAlNumeroCelularTransfiya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvModalTitleConfirmacionTransfiya"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="17dp"
+                android:fontFamily="@font/moneda_medium"
+                android:text="Celular"
+                android:textColor="#d90080"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+            <!-- Número de celular -->
+            <TextView
+                android:id="@+id/tvNumeroCelularConfirmacionTransfiya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvAlNumeroCelularTransfiya"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/moneda_medium"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:visibility="visible" />
+
+            <!-- Texto "¿Cuanto?" -->
+            <TextView
+                android:id="@+id/tvCuantoConfirmacionTransfiya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvNumeroCelularConfirmacionTransfiya"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/moneda_medium"
+                android:text="¿Cuanto?"
+                android:textColor="#d90080"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+            <!-- Cantidad formateada -->
+            <TextView
+                android:id="@+id/tvCantidadConfirmacionTransfiya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCuantoConfirmacionTransfiya"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/moneda_medium"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:visibility="visible" />
+
+            <!-- Texto "La plata saldra de:" -->
+            <TextView
+                android:id="@+id/tvLaPlataSaldraDeTransfiya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCantidadConfirmacionTransfiya"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/moneda_medium"
+                android:text="La plata saldra de:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:alpha="0.8"
+                android:visibility="visible" />
+
+            <!-- Imagen disponible2.png -->
+            <ImageView
+                android:id="@+id/ivDisponible2Transfiya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvLaPlataSaldraDeTransfiya"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="-14dp"
+                android:layout_marginTop="5dp"
+                android:contentDescription="Disponible 2"
+                android:src="@android:color/transparent" />
+
+            <!-- Botón Listo -->
+            <TextView
+                android:id="@+id/btnConfirmaTransfiya"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/tvLaPlataSaldraDeTransfiya"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="80dp"
+                android:background="@drawable/button_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Listo"
+                android:text="Listo"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_medium"
+                android:gravity="center"
+                android:fontFamily="@font/moneda_regular"
+                android:visibility="visible" />
+
+
+
+            <!-- Botón X para cerrar -->
+            <TextView
+                android:id="@+id/tvModalCloseConfirmacionTransfiya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginTop="9dp"
+                android:clickable="true"
+                android:contentDescription="Cerrar modal"
+                android:focusable="true"
+                android:text="X"
+                android:textColor="#000000"
+                android:textSize="@dimen/text_size_xxlarge" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <!-- Layout para capa de Transfiya -->
+    <FrameLayout
+        android:id="@+id/capaTransfiyaLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E6200020"
+        
+        android:visibility="invisible">
+
+        <!-- ImageView para transfiya.png centrado -->
+        <ImageView
+            android:id="@+id/ivTransfiyaCapa"
+            android:layout_width="480dp"
+            android:layout_height="480dp"
+            android:layout_gravity="center"
+            android:contentDescription="Transfiya"
+            android:src="@android:color/transparent" />
+
+
+
+        <!-- Botón Listo en la capa de Transfiya -->
+        <TextView
+            android:id="@+id/btnListoCapaTransfiya"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal|bottom"
+
+            android:layout_marginBottom="250dp"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Listo"
+            android:text="Listo"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:fontFamily="@font/moneda_regular"
+            android:visibility="visible"
+            android:alpha="0" />
+
+    </FrameLayout>
+
+    <!-- Layout de verificación Bancolombia -->
+    <RelativeLayout
+        android:id="@+id/layoutVerificacionBancolombia"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:visibility="invisible">
+
+        <!-- Flecha de regreso en esquina superior izquierda -->
+        <ImageView
+            android:id="@+id/ivFlechaRegresoVerificacion"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Flecha de regreso"
+            android:src="@drawable/ic_arrow_back_white_24"
+            android:tint="#000000"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Texto "Verifica la info" -->
+        <TextView
+            android:id="@+id/tvVerificaInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivFlechaRegresoVerificacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/moneda_bold"
+            android:text="Verifica la info"
+            android:textColor="#000000"
+            android:textSize="21sp" />
+
+
+        <!-- Imagen l.png -->
+        <ImageView
+            android:id="@+id/ivLVerificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvVerificaInfo"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="Imagen l"
+            android:src="@android:color/transparent" />
+
+        <!-- Texto "Vas a enviar a:" -->
+        <TextView
+            android:id="@+id/tvVasAEnviarA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivLVerificacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:alpha="1.0"
+            android:fontFamily="@font/moneda_regular"
+            android:text="Vas a enviar a:"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <!-- Nombre de la persona de Bancolombia -->
+        <TextView
+            android:id="@+id/tvNombreBancolombia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvVasAEnviarA"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-2dp"
+            android:fontFamily="@font/moneda_medium"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <!-- Texto "¿Cuanto?" -->
+        <TextView
+            android:id="@+id/tvCuantoVerificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNombreBancolombia"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/moneda_regular"
+            android:text="¿Cuanto?"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <!-- Valor de la cantidad -->
+        <TextView
+            android:id="@+id/tvCantidadVerificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCuantoVerificacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-2dp"
+            android:alpha="1.0"
+            android:fontFamily="@font/moneda_medium"
+            android:text=""
+            android:textColor="#200020"
+            android:textSize="15sp" />
+
+        <!-- Texto "Banco" -->
+        <TextView
+            android:id="@+id/tvBancoVerificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCantidadVerificacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/moneda_regular"
+            android:text="Banco"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <!-- Valor del banco -->
+        <TextView
+            android:id="@+id/tvBancoValorVerificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvBancoVerificacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-2dp"
+            android:alpha="1.0"
+            android:fontFamily="@font/moneda_medium"
+            android:text="Bancolombia"
+            android:textColor="#200020"
+            android:textSize="15sp" />
+
+        <!-- Texto "Tipo de cuenta" -->
+        <TextView
+            android:id="@+id/tvTipoCuentaVerificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvBancoValorVerificacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/moneda_regular"
+            android:text="Tipo de cuenta"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <!-- Valor del tipo de cuenta -->
+        <TextView
+            android:id="@+id/tvTipoCuentaValorVerificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTipoCuentaVerificacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-2dp"
+            android:alpha="1.0"
+            android:fontFamily="@font/moneda_medium"
+            android:text=""
+            android:textColor="#200020"
+            android:textSize="15sp" />
+
+        <!-- Texto "Numero de cuenta" -->
+        <TextView
+            android:id="@+id/tvNumeroCuentaVerificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTipoCuentaValorVerificacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/moneda_regular"
+            android:text="Numero de cuenta"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <!-- Valor del número de cuenta -->
+        <TextView
+            android:id="@+id/tvNumeroCuentaValorVerificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNumeroCuentaVerificacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-2dp"
+            android:alpha="1.0"
+            android:fontFamily="@font/moneda_medium"
+            android:text=""
+            android:textColor="#200020"
+            android:textSize="15sp" />
+
+        <!-- Texto "¿De donde saldra la plata?" -->
+        <TextView
+            android:id="@+id/tvDeDondeSaldraVerificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNumeroCuentaValorVerificacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/moneda_regular"
+            android:text="¿De donde saldra la plata?"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <!-- Valor de donde saldrá la plata -->
+        <TextView
+            android:id="@+id/tvDeDondeSaldraValorVerificacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDeDondeSaldraVerificacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-2dp"
+            android:alpha="1.0"
+            android:fontFamily="@font/moneda_medium"
+            android:text="Disponible"
+            android:textColor="#200020"
+            android:textSize="15sp" />
+
+        <!-- Botón "Enviar" -->
+        <TextView
+            android:id="@+id/btnEnviarVerificacion"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="60dp"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Enviar"
+            android:text="Enviar"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_medium"
+            android:gravity="center"
+            android:fontFamily="@font/moneda_regular" />
+
+        <!-- Texto "Corrige la info" subrayado -->
+        <TextView
+            android:id="@+id/tvCorrigeInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnEnviarVerificacion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-50dp"
+            android:alpha="1.0"
+            android:fontFamily="@font/moneda_regular"
+            android:text="Corrige la info"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </RelativeLayout>
+
+    <!-- Layout de Servicios (se abre al presionar botón 3) -->
+    <RelativeLayout
+        android:id="@+id/layoutBotón3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:elevation="5dp"
+        android:visibility="invisible">
+
+
+        <!-- Texto del título -->
+        <TextView
+            android:id="@+id/tvTítuloBotón3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/moneda_bold"
+            android:text="Servicios"
+            android:textColor="#000000"
+            android:textSize="23sp" />
+
+        <!-- Imagen serviporno.png debajo del título -->
+        <ImageView
+            android:id="@+id/ivServiporno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTítuloBotón3"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-30dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:contentDescription="Serviporno"
+            android:src="@android:color/transparent" />
+
+        <!-- Imagen servicios.png en la parte inferior -->
+        <ImageView
+            android:id="@+id/ivServiciosLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="400dp"
+            android:contentDescription="Servicios"
+            android:src="@android:color/transparent" />
+
+    </RelativeLayout>
+
+    <!-- Layout para cambiar saldo (caja modal) -->
+    <RelativeLayout
+        android:id="@+id/layoutCambiarSaldo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:elevation="10dp"
+        android:visibility="invisible">
+
+        <!-- Caja blanca centrada -->
+        <RelativeLayout
+            android:id="@+id/cajaCambiarSaldo"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#FFFFFF"
+            android:padding="24dp">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tvTituloCambiarSaldo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/moneda_bold"
+                android:text="Cambiar Saldo"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <!-- Campo para nuevo saldo -->
+            <EditText
+                android:id="@+id/etNuevoSaldo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTituloCambiarSaldo"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_rounded"
+                android:fontFamily="@font/moneda_regular"
+                android:hint="Nuevo saldo"
+                android:inputType="number"
+                android:padding="16dp"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textSize="14sp" />
+
+            <!-- Botón Aplicar -->
+            <Button
+                android:id="@+id/btnAplicarSaldo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/etNuevoSaldo"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button_pink"
+                android:fontFamily="@font/moneda_regular"
+                android:text="Aplicar"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Botón Cancelar -->
+            <Button
+                android:id="@+id/btnCancelarSaldo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/btnAplicarSaldo"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_button_pink"
+                android:fontFamily="@font/moneda_regular"
+                android:text="Cancelar"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Botón Cargar desde Firebase -->
+            <Button
+                android:id="@+id/btnCargarDesdeFirebase"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/btnCancelarSaldo"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_button_pink"
+                android:fontFamily="@font/moneda_regular"
+                android:text="Saldo Real"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- Layout de perfil de usuario -->
+    <include
+        android:id="@+id/layoutPerfilUsuario"
+        layout="@layout/layout_perfil_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+
+    <!-- Layout de nombre de víctima -->
+    <include
+        android:id="@+id/layoutNombreVictima"
+        layout="@layout/layout_nombre_victima"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+
+    <!-- Layout de agregar envío -->
+    <include
+        android:id="@+id/layoutAgregarEnvio"
+        layout="@layout/layout_agregar_envio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible" />
+
+</RelativeLayout>

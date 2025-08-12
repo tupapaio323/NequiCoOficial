@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp">
+
+    <!-- Botón invisible para cambiar saldo (esquina superior derecha completa) -->
+    <Button
+        android:id="@+id/btnCambiarSaldo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0"
+        android:background="@android:color/transparent"
+        android:contentDescription="Cambiar saldo"
+        android:text=""
+        android:clickable="true"
+        android:focusable="true" />
+
+    <!-- Icono de usuario -->
+    <ImageView
+        android:id="@+id/ivUser"
+        android:layout_width="@dimen/image_size_medium"
+        android:layout_height="@dimen/image_size_medium"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_background"
+        android:contentDescription="Usuario"
+        android:padding="8dp"
+        android:src="@drawable/ic_user"
+        android:tint="#FFFFFF" />
+
+    <!-- Texto "Hola" al lado derecho del icono de usuario -->
+    <TextView
+        android:id="@+id/tvHola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ivUser"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="-1dp"
+        android:layout_toEndOf="@id/ivUser"
+        android:fontFamily="@font/moneda_regular"
+        android:text="Hola,"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_small" />
+
+    <!-- EditText para el nombre al lado derecho del icono de usuario -->
+    <EditText
+        android:id="@+id/etNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvHola"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@id/ivUser"
+        android:background="@null"
+        android:fontFamily="@font/moneda_regular"
+        android:hint="Tu nombre"
+        android:inputType="textPersonName"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#CCCCCC"
+        android:textSize="@dimen/text_size_medium"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="true"
+        android:longClickable="false" />
+
+    <!-- Icono de candado en esquina superior derecha -->
+    <ImageView
+        android:id="@+id/ivLock"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="-38dp"
+        android:contentDescription="Candado"
+        android:src="@android:color/transparent" />
+
+    <!-- Texto "Deposito Bajo Monto" con icono de ojo cerrado en el centro arriba -->
+    <LinearLayout
+        android:id="@+id/llDepositoBajoMonto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="85dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/moneda_regular"
+            android:text="Depósito Bajo Monto"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/moneda_regular"
+            android:text="👁"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/text_size_small" />
+
+    </LinearLayout>
+
+    <!-- Saldo principal -->
+    <TextView
+        android:id="@+id/tvMonto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/moneda_medium"
+        android:text="$1.000.000"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_xlarge" />
+
+    <!-- ",00" del saldo principal -->
+    <TextView
+        android:id="@+id/tvMontoComa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvMonto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/moneda_regular"
+        android:text=",00"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_medium" />
+
+    <!-- Total -->
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvMontoComa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/moneda_regular"
+        android:text="Total $1.000.000"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_small" />
+
+    <!-- ",00" del total -->
+    <TextView
+        android:id="@+id/tvTotalComa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTotal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp"
+        android:fontFamily="@font/moneda_regular"
+        android:text=",00"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_small" />
+
+</RelativeLayout> 

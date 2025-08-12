@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <!-- Imagen home.png en el centro de la parte inferior -->
+    <ImageView
+        android:id="@+id/ivHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:contentDescription="Imagen Home"
+        android:src="@android:color/transparent" />
+
+    <!-- Imagen movements.png invisible en el centro de la parte inferior -->
+    <ImageView
+        android:id="@+id/ivMovements"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:contentDescription="Imagen Movements"
+        android:src="@android:color/transparent"
+        android:visibility="invisible" />
+
+    <!-- Imagen servicios.png invisible en el centro de la parte inferior -->
+    <ImageView
+        android:id="@+id/ivServicios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:contentDescription="Imagen Servicios"
+        android:src="@android:color/transparent"
+        android:visibility="invisible" />
+
+</RelativeLayout> 

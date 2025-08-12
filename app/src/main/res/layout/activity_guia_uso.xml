@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC200020">
+
+    <!-- Fondo animado tenue -->
+    <ImageView
+        android:id="@+id/bgGuiaAnim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0.18"
+        android:src="@drawable/hoy" />
+
+    <!-- Vignette overlay oscuro -->
+    <View
+        android:id="@+id/vignetteGuia"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3200020" />
+
+    <!-- Header con flecha de cerrar -->
+    <LinearLayout
+        android:id="@+id/headerGuia"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <ImageView
+            android:id="@+id/ivFlechaCerrarGuia"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Cerrar guía"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/font_de_the_boss"
+            android:gravity="center"
+            android:text="Guía de Uso"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:id="@+id/btnNoMostrarGuia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button_white_border_thin"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/font_de_the_boss"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="NO MOSTRAR"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/btnAceptarGuia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/font_de_the_boss"
+                android:padding="8dp"
+                android:text="ACEPTAR"
+                android:textColor="#e8b7d2"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Contenedor principal con scroll horizontal -->
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerGuia"
+        android:layout_above="@id/indicadoresGuia"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <!-- Slide 1: Personaliza tu perfil -->
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="20dp">
+
+                <ImageView
+                    android:layout_width="500dp"
+                    android:layout_height="500dp"
+                    android:contentDescription="Personaliza tu perfil"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/guia_1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Personaliza Tu Identidad"
+                    android:textColor="#e8b7d2"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/font_de_the_boss"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/font_de_the_boss"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Forja tu alias"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!-- Slide 2: Nombre y foto -->
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="20dp">
+
+                <ImageView
+                    android:layout_width="500dp"
+                    android:layout_height="500dp"
+                    android:contentDescription="Nombre y foto de perfil"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/guia_2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Nombre y Foto de Perfil"
+                    android:textColor="#e8b7d2"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/font_de_the_boss"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/font_de_the_boss"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp"
+                    android:text="Escribe tu nombre o uno al azar. La cara es opcional..."
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+                         <!-- Slide 3: Nombre y foto (guia_4) -->
+             <LinearLayout
+                 android:layout_width="300dp"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical"
+                 android:gravity="center"
+                 android:layout_marginEnd="20dp">
+
+                 <ImageView
+                     android:layout_width="500dp"
+                     android:layout_height="500dp"
+                     android:contentDescription="Nombre y foto de perfil"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/guia_4" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="20dp"
+                     android:text="Nombre y Foto de Perfil"
+                     android:textColor="#e8b7d2"
+                     android:textSize="18sp"
+                      android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="10dp"
+                     android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center"
+                     android:lineSpacingExtra="4dp"
+                     android:text="Moldea tu identidad. "
+                     android:textColor="#FFFFFF"
+                     android:textSize="14sp" />
+
+             </LinearLayout>
+
+             <!-- Slide 4: Ajustes para víctima (guia_5) -->
+             <LinearLayout
+                 android:layout_width="300dp"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical"
+                 android:gravity="center"
+                 android:layout_marginEnd="20dp">
+
+                 <ImageView
+                     android:layout_width="500dp"
+                     android:layout_height="500dp"
+                     android:contentDescription="Ajustes para guardar víctima"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/guia_5" />
+
+                  <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="20dp"
+                      android:text="Guarda el Nombre de la Víctima"
+                     android:textColor="#e8b7d2"
+                     android:textSize="18sp"
+                      android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="10dp"
+                     android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center"
+                     android:lineSpacingExtra="4dp"
+                     android:text="Dale en &quot;Ajustes&quot; para guardar el nombre de la victima"
+                     android:textColor="#FFFFFF"
+                     android:textSize="14sp" />
+
+             </LinearLayout>
+
+             <!-- Slide 5: Ajustes para víctima (guia_6) -->
+             <LinearLayout
+                 android:layout_width="300dp"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical"
+                 android:gravity="center"
+                 android:layout_marginEnd="20dp">
+
+                 <ImageView
+                     android:layout_width="500dp"
+                     android:layout_height="500dp"
+                     android:contentDescription="Ajustes para guardar víctima"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/guia_6" />
+
+                  <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="20dp"
+                     android:text="Guardar Nombre de Víctima"
+                     android:textColor="#e8b7d2"
+                     android:textSize="18sp"
+                      android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="10dp"
+                     android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center"
+                     android:lineSpacingExtra="4dp"
+                     android:text="Guarda el contacto"
+                     android:textColor="#FFFFFF"
+                     android:textSize="14sp" />
+
+             </LinearLayout>
+
+                         <!-- Slide 6: Generar transferencia (guia_7) -->
+             <LinearLayout
+                 android:layout_width="300dp"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical"
+                 android:gravity="center"
+                 android:layout_marginEnd="20dp">
+
+                 <ImageView
+                     android:layout_width="500dp"
+                     android:layout_height="500dp"
+                     android:contentDescription="Generar transferencia"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/guia_7" />
+
+                  <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="20dp"
+                      android:text="Generar la Transferencia"
+                     android:textColor="#e8b7d2"
+                     android:textSize="18sp"
+                      android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="10dp"
+                     android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center"
+                     android:lineSpacingExtra="4dp"
+                     android:text="Para realizar transferencia dale tap en lo señalado"
+                     android:textColor="#FFFFFF"
+                     android:textSize="14sp" />
+
+             </LinearLayout>
+
+             <!-- Slide 7: Generar transferencia (guia_8) -->
+             <LinearLayout
+                 android:layout_width="300dp"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical"
+                 android:gravity="center"
+                 android:layout_marginEnd="20dp">
+
+                 <ImageView
+                     android:layout_width="500dp"
+                     android:layout_height="500dp"
+                     android:contentDescription="Generar transferencia"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/guia_8" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="20dp"
+                     android:text="Generar la Transferencia"
+                     android:textColor="#e8b7d2"
+                     android:textSize="18sp"
+                     android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="10dp"
+                     android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center"
+                     android:lineSpacingExtra="4dp"
+                     android:text="Tap en lo señalado"
+                     android:textColor="#FFFFFF"
+                     android:textSize="14sp" />
+
+             </LinearLayout>
+
+             <!-- Slide 8: Llenar campos (guia_9) -->
+             <LinearLayout
+                 android:layout_width="300dp"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical"
+                 android:gravity="center"
+                 android:layout_marginEnd="20dp">
+
+                 <ImageView
+                     android:layout_width="500dp"
+                     android:layout_height="500dp"
+                     android:contentDescription="Llenar campos de transferencia"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/guia_9" />
+
+                  <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="20dp"
+                      android:text="Completa los Campos"
+                     android:textColor="#e8b7d2"
+                     android:textSize="18sp"
+                      android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="10dp"
+                     android:fontFamily="@font/font_de_the_boss"
+                     android:gravity="center"
+                     android:lineSpacingExtra="4dp"
+                     android:text="Escribe el numero guardado y la cantidad a pagar y lista la generacion del comprobante."
+                     android:textColor="#FFFFFF"
+                     android:textSize="14sp" />
+
+             </LinearLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <!-- Indicadores de página -->
+    <LinearLayout
+        android:id="@+id/indicadoresGuia"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <View
+            android:id="@+id/indicador1"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/indicador_activo" />
+
+        <View
+            android:id="@+id/indicador2"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/indicador_inactivo" />
+
+        <View
+            android:id="@+id/indicador3"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/indicador_inactivo" />
+
+        <View
+            android:id="@+id/indicador4"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/indicador_inactivo" />
+
+                 <View
+             android:id="@+id/indicador5"
+             android:layout_width="12dp"
+             android:layout_height="12dp"
+             android:layout_marginEnd="8dp"
+             android:background="@drawable/indicador_inactivo" />
+
+         <View
+             android:id="@+id/indicador6"
+             android:layout_width="12dp"
+             android:layout_height="12dp"
+             android:layout_marginEnd="8dp"
+             android:background="@drawable/indicador_inactivo" />
+
+         <View
+             android:id="@+id/indicador7"
+             android:layout_width="12dp"
+             android:layout_height="12dp"
+             android:layout_marginEnd="8dp"
+             android:background="@drawable/indicador_inactivo" />
+
+         <View
+             android:id="@+id/indicador8"
+             android:layout_width="12dp"
+             android:layout_height="12dp"
+             android:background="@drawable/indicador_inactivo" />
+
+    </LinearLayout>
+
+</RelativeLayout> 

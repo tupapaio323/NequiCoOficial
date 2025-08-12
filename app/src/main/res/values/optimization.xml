@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Configuración para optimizar recursos -->
+    <bool name="enable_optimization">true</bool>
+    <bool name="enable_compression">true</bool>
+</resources>

@@ -1,0 +1,26 @@
+# Archivos sensibles - NO subir a GitHub
+app/google-services.json
+app/src/main/res/values/secrets.xml
+firebase_rules_*.json
+
+# Build files
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+**/build/
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Firebase
+.firebase/
+firebase-debug.log
+ui-debug.log
+
+# API Keys y certificados
+*.keystore
+*.jks
+key.properties

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#200020">
+
+    <!-- Rectángulo de clave dinámica en la esquina superior derecha -->
+    <FrameLayout
+        android:id="@+id/dynamicKeyContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/dynamic_key_bg"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Círculo de progreso -->
+            <FrameLayout
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="6dp">
+
+                <!-- Círculo de fondo blanco -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle_progress_bg" />
+
+                <!-- Círculo de progreso -->
+                <View
+                    android:id="@+id/circleProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle_progress_spinner"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <!-- Texto "clave dinámica" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:text="clave\ndinámica"
+                android:textColor="#FFFFFF"
+                android:textSize="9sp"
+                android:fontFamily="@font/moneda_regular"
+                android:lineSpacingExtra="-3dp"
+                android:gravity="center" />
+
+            <!-- 6 dígitos random -->
+            <TextView
+                android:id="@+id/dynamicDigits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:text="123456"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="@font/moneda_bold"
+                android:letterSpacing="0.1" />
+
+            <!-- Icono de copiar -->
+            <ImageView
+                android:id="@+id/copyIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_copy_outline"
+                android:contentDescription="Copiar clave dinámica"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:padding="2dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- Imagen bank.png en la parte inferior -->
+    <ImageView
+        android:id="@+id/bankImage"
+        android:layout_width="60dp"
+        android:layout_height="43dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="Bank"
+        android:src="@android:color/transparent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:fitsSystemWindows="true">
+
+        <!-- Icono de ayuda en la esquina superior izquierda -->
+        <ImageView
+            android:id="@+id/ivHelp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="-25dp"
+            android:layout_marginTop="-25dp"
+            android:contentDescription="Información de la App"
+            android:padding="4dp"
+            android:src="@android:color/transparent"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+        <!-- Espacio flexible para empujar el logo hacia el centro -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7" />
+
+        <!-- Logo en el centro -->
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="241dp"
+            android:layout_height="255dp"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="false"
+            android:clickable="false"
+            android:contentDescription="Logo"
+            android:cropToPadding="false"
+            android:duplicateParentState="false"
+            android:longClickable="false"
+            android:src="@android:color/transparent" />
+
+        <!-- Espacio flexible para empujar el campo y botón hacia abajo -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8" />
+
+        <!-- Contenedor para el campo de teléfono con prefijo -->
+        <LinearLayout
+            android:id="@+id/phoneContainer"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Prefijo +57 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/moneda_regular"
+                android:paddingStart="20dp"
+                android:paddingEnd="8dp"
+                android:text="+57"
+                android:textColor="#e8b7d2"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <!-- Separador -->
+            <TextView
+                android:id="@+id/tvSeparator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="|"
+                android:textColor="@color/separator_color_selector"
+                android:textSize="19sp" />
+
+            <!-- Campo de entrada -->
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="139dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:fontFamily="@font/moneda_medium"
+                android:hint=""
+                android:importantForAutofill="no"
+                android:inputType="phone"
+                android:maxLength="13"
+                android:padding="2dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textCursorDrawable="@drawable/white_cursor"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <!-- Contenedor para botón y cuadro de dólar -->
+        <LinearLayout
+            android:id="@+id/buttonContainer"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/button_background_final"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/moneda_regular"
+                    android:gravity="center"
+                    android:text="Entra"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:shadowColor="#FFFFFFFF"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="8" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:indeterminate="true"
+                    android:visibility="gone"
+                    android:indeterminateTint="#FFFFFF" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/dollarBox"
+                android:layout_width="49dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button_background_final"
+                android:fontFamily="@font/moneda_regular"
+                android:gravity="center"
+                android:text="$"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Espacio flexible para empujar todo hacia arriba -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3" />
+
+    </LinearLayout>
+
+    <!-- Ventana Modal de Información -->
+    <include
+        android:id="@+id/modalInfoApp"
+        layout="@layout/modal_info_app"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>

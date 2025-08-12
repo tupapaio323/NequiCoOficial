@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="30"
+    android:viewportHeight="30">
+    
+    <!-- Cuadro negro sin relleno -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeWidth="1.5"
+        android:pathData="M5,5h16v16h-16z"/>
+    
+    <!-- Lápiz diagonal desde arriba a la derecha -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M25,2l-12,12 -6,-6 12,-12z"/>
+    
+    <!-- Punta del lápiz -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M13,14l-6,-6 3,-3z"/>
+</vector> 
